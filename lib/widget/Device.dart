@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:greenify/widget/add_card.dart';
+import 'package:greenify/widget/device_card.dart';
 import 'package:greenify/widget/devicelist/deviceListGenerator.dart';
 
 class Device extends StatelessWidget {
@@ -10,19 +12,25 @@ class Device extends StatelessWidget {
       child: Scaffold(
         backgroundColor: const Color(0x0C0C0C),
         body: Padding(
-          padding: const EdgeInsets.fromLTRB(16.0, 72.0, 0, 0),
-          child: Column(
+          padding: const EdgeInsets.fromLTRB(16.0, 32.0, 0, 0),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text("Add Device",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 30.0,
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'Helvetica')),
+                      fontFamily: 'assets/fonts/HelveticaReg.ttf')),
               const SizedBox(
-                height: 32,
+                height: 8,
               ),
-              DeviceList(),
+              Row(
+                children: const [
+                  DeviceList(),
+                  SizedBox(width: 8),
+                  AddCard(),
+                ],
+              ),
             ],
           ),
         ),

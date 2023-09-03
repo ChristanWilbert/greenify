@@ -36,11 +36,12 @@ class DeviceCard extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(
                   device.qty.toString() + "QTY",
-                  style: TextStyle(
+                  style: const TextStyle(
+
                       color: Color(0xff043600),
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
-                      fontFamily: "Helevetica"),
+                      fontFamily: "assets/fonts/HelveticaReg.ttf"),
                 ),
               ),
             ),
@@ -54,6 +55,7 @@ class DeviceCard extends StatelessWidget {
               height: 37,
             ),
           ),
+
           Padding(
             padding: EdgeInsets.fromLTRB(24, 84, 41, 101),
             child: Text(device.name,
@@ -61,14 +63,14 @@ class DeviceCard extends StatelessWidget {
                   color: Color(0xffEEF1F4),
                   fontSize: 12,
                   fontWeight: FontWeight.normal,
-                  fontFamily: "Helevetica",
+                  fontFamily: "assets/fonts/HelveticaReg.ttf",
                 )),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(42, 114, 43, 66),
+            padding: const EdgeInsets.fromLTRB(41, 113, 39, 67),
             child: Container(
-              width: 65,
-              height: 20.5,
+              width: 70,
+              height: 20,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(14),
                 color: const Color(0xff151515),
@@ -76,15 +78,29 @@ class DeviceCard extends StatelessWidget {
                   color: const Color(0xff292F39),
                 ),
               ),
-              child: const Align(
+              child: Align(
                 alignment: Alignment.center,
-                child: Text(
-                  "1.5 TON",
-                  style: TextStyle(
-                    color: Color(0xff9BA5B7),
-                    fontSize: 10,
-                    fontWeight: FontWeight.w700,
-                  ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "1.5 TON",
+                      style: TextStyle(
+                        color: Color(0xff9BA5B7),
+                        fontSize: 10,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: "assets/fonts/HelveticaReg.ttf",
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 2,
+                    ),
+                    Image.asset(
+                      "assets/images/arrowsmall.png",
+                      width: 6,
+                      height: 11,
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -95,20 +111,35 @@ class DeviceCard extends StatelessWidget {
               width: 135,
               height: 44,
               decoration: BoxDecoration(
-                color: Color(0xffEEF1F4),
+                color: const Color(0xffEEF1F4),
                 borderRadius: BorderRadius.circular(25),
                 border: Border.all(
                   color: const Color(0xff292F39),
                 ),
               ),
-              child: const Align(
+              child: Align(
                 alignment: Alignment.center,
-                child: Text("1500W",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "Helevetica",
-                    )),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "1500W",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w900,
+                        fontFamily: "assets/fonts/HelveticaBlk.ttf",
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 8,
+                    ),
+                    Image.asset(
+                      "assets/images/arrowbig.png",
+                      width: 24,
+                      height: 24,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
