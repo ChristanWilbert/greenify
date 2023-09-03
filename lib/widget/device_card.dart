@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:greenify/models/device_class.dart';
 
-class DeviceCard extends StatefulWidget {
-  const DeviceCard({super.key});
-
-  @override
-  State<DeviceCard> createState() => _DeviceCardState();
-}
-
-class _DeviceCardState extends State<DeviceCard> {
+class DeviceCard extends StatelessWidget {
+  const DeviceCard({required this.device, super.key});
+  final Device device;
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.all(4),
       width: 150,
       height: 200,
       decoration: BoxDecoration(
@@ -22,6 +19,7 @@ class _DeviceCardState extends State<DeviceCard> {
       ),
       child: Stack(
         children: [
+          //qty
           Padding(
             padding: const EdgeInsets.fromLTRB(85, 12, 12, 165),
             child: Container(
@@ -34,10 +32,10 @@ class _DeviceCardState extends State<DeviceCard> {
                   color: const Color(0xff292F39),
                 ),
               ),
-              child: const Align(
+              child: Align(
                 alignment: Alignment.center,
                 child: Text(
-                  "2QTY",
+                  device.qty.toString() + "QTY",
                   style: TextStyle(
                       color: Color(0xff043600),
                       fontSize: 10,
@@ -47,18 +45,19 @@ class _DeviceCardState extends State<DeviceCard> {
               ),
             ),
           ),
+          // icon
           Padding(
             padding: const EdgeInsets.fromLTRB(24, 39, 86, 124),
             child: Image.asset(
-              "assets/images/Vector.png",
+              device.img,
               width: 40,
               height: 37,
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.fromLTRB(24, 84, 41, 101),
-            child: Text("Air Conditioner",
-                style: TextStyle(
+            child: Text(device.name,
+                style: const TextStyle(
                   color: Color(0xffEEF1F4),
                   fontSize: 12,
                   fontWeight: FontWeight.normal,
