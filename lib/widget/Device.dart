@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:greenify/widget/add_card.dart';
 import 'package:greenify/widget/device_card.dart';
+import 'package:greenify/widget/devicelist/deviceListGenerator.dart';
 
 class Device extends StatelessWidget {
   const Device({super.key});
@@ -25,7 +26,7 @@ class Device extends StatelessWidget {
               ),
               Row(
                 children: const [
-                  DeviceCard(),
+                  DeviceList(),
                   SizedBox(width: 8),
                   AddCard(),
                 ],

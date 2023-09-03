@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:greenify/models/device_class.dart';
 
 class DeviceCard extends StatelessWidget {
-  const DeviceCard({super.key});
-
+  const DeviceCard({required this.device, super.key});
+  final Device device;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,6 +19,7 @@ class DeviceCard extends StatelessWidget {
       ),
       child: Stack(
         children: [
+          //qty
           Padding(
             padding: const EdgeInsets.fromLTRB(85, 12, 12, 165),
             child: Container(
@@ -35,6 +37,7 @@ class DeviceCard extends StatelessWidget {
                 child: Text(
                   device.qty.toString() + "QTY",
                   style: const TextStyle(
+
                       color: Color(0xff043600),
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
@@ -43,6 +46,7 @@ class DeviceCard extends StatelessWidget {
               ),
             ),
           ),
+          // icon
           Padding(
             padding: const EdgeInsets.fromLTRB(24, 39, 86, 124),
             child: Image.asset(
@@ -51,10 +55,11 @@ class DeviceCard extends StatelessWidget {
               height: 37,
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.fromLTRB(24, 84, 0, 101),
-            child: Text("Air Conditioner",
-                style: TextStyle(
+
+          Padding(
+            padding: EdgeInsets.fromLTRB(24, 84, 41, 101),
+            child: Text(device.name,
+                style: const TextStyle(
                   color: Color(0xffEEF1F4),
                   fontSize: 12,
                   fontWeight: FontWeight.normal,
