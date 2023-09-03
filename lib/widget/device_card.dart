@@ -37,7 +37,6 @@ class DeviceCard extends StatelessWidget {
                 child: Text(
                   device.qty.toString() + "QTY",
                   style: const TextStyle(
-
                       color: Color(0xff043600),
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
@@ -131,10 +130,10 @@ class DeviceCard extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      width: 8,
+                      width: 4,
                     ),
                     Image.asset(
-                      "assets/images/arrowbig.png",
+                      "assets/images/selectorbig.png",
                       width: 24,
                       height: 24,
                     ),

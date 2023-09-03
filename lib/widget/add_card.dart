@@ -11,6 +11,7 @@ class _AddCardState extends State<AddCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.all(4),
       width: 150,
       height: 200,
       decoration: BoxDecoration(
@@ -24,7 +25,8 @@ class _AddCardState extends State<AddCard> {
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(7, 12, 7, 52),
-            child: Image.asset("assets/images/add.png", width: 136, height: 136),
+            child:
+                Image.asset("assets/images/add.png", width: 136, height: 136),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(8, 148, 7, 8),

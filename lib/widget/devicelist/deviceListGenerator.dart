@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:greenify/models/device_class.dart';
+import 'package:greenify/widget/add_card.dart';
 import 'package:greenify/widget/device_card.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -25,10 +26,14 @@ class DeviceList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> selectedDevices = [];
+    selectedDevices
+        .addAll((devices.where((element) => element.selected).map((device) {
+      return (DeviceCard(device: device));
+    })).toList());
+    selectedDevices.add(const AddCard());
     return Wrap(
-      children: (devices.where((element) => element.selected).map((device) {
-        return (DeviceCard(device: device));
-      })).toList(),
+      children: selectedDevices,
     );
   }
 }
