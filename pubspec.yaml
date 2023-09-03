@@ -75,6 +75,7 @@ flutter:
     - family: "Helvetica"
       fonts:
         - asset: assets/fonts/HelveticaReg.ttf
+        - asset: assets/fonts/HelveticaBlk.ttf
 
   #
   # For details regarding fonts from package dependencies,

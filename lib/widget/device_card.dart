@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 
-class DeviceCard extends StatefulWidget {
+class DeviceCard extends StatelessWidget {
   const DeviceCard({super.key});
 
   @override
-  State<DeviceCard> createState() => _DeviceCardState();
-}
-
-class _DeviceCardState extends State<DeviceCard> {
-  @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.all(4),
       width: 150,
       height: 200,
       decoration: BoxDecoration(
@@ -34,15 +30,15 @@ class _DeviceCardState extends State<DeviceCard> {
                   color: const Color(0xff292F39),
                 ),
               ),
-              child: const Align(
+              child: Align(
                 alignment: Alignment.center,
                 child: Text(
-                  "2QTY",
-                  style: TextStyle(
+                  device.qty.toString() + "QTY",
+                  style: const TextStyle(
                       color: Color(0xff043600),
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
-                      fontFamily: "Helevetica"),
+                      fontFamily: "assets/fonts/HelveticaReg.ttf"),
                 ),
               ),
             ),
@@ -50,26 +46,26 @@ class _DeviceCardState extends State<DeviceCard> {
           Padding(
             padding: const EdgeInsets.fromLTRB(24, 39, 86, 124),
             child: Image.asset(
-              "assets/images/Vector.png",
+              device.img,
               width: 40,
               height: 37,
             ),
           ),
           const Padding(
-            padding: EdgeInsets.fromLTRB(24, 84, 41, 101),
+            padding: EdgeInsets.fromLTRB(24, 84, 0, 101),
             child: Text("Air Conditioner",
                 style: TextStyle(
                   color: Color(0xffEEF1F4),
                   fontSize: 12,
                   fontWeight: FontWeight.normal,
-                  fontFamily: "Helevetica",
+                  fontFamily: "assets/fonts/HelveticaReg.ttf",
                 )),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(42, 114, 43, 66),
+            padding: const EdgeInsets.fromLTRB(41, 113, 39, 67),
             child: Container(
-              width: 65,
-              height: 20.5,
+              width: 70,
+              height: 20,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(14),
                 color: const Color(0xff151515),
@@ -77,15 +73,29 @@ class _DeviceCardState extends State<DeviceCard> {
                   color: const Color(0xff292F39),
                 ),
               ),
-              child: const Align(
+              child: Align(
                 alignment: Alignment.center,
-                child: Text(
-                  "1.5 TON",
-                  style: TextStyle(
-                    color: Color(0xff9BA5B7),
-                    fontSize: 10,
-                    fontWeight: FontWeight.w700,
-                  ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "1.5 TON",
+                      style: TextStyle(
+                        color: Color(0xff9BA5B7),
+                        fontSize: 10,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: "assets/fonts/HelveticaReg.ttf",
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 2,
+                    ),
+                    Image.asset(
+                      "assets/images/arrowsmall.png",
+                      width: 6,
+                      height: 11,
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -96,20 +106,35 @@ class _DeviceCardState extends State<DeviceCard> {
               width: 135,
               height: 44,
               decoration: BoxDecoration(
-                color: Color(0xffEEF1F4),
+                color: const Color(0xffEEF1F4),
                 borderRadius: BorderRadius.circular(25),
                 border: Border.all(
                   color: const Color(0xff292F39),
                 ),
               ),
-              child: const Align(
+              child: Align(
                 alignment: Alignment.center,
-                child: Text("1500W",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "Helevetica",
-                    )),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "1500W",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w900,
+                        fontFamily: "assets/fonts/HelveticaBlk.ttf",
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 8,
+                    ),
+                    Image.asset(
+                      "assets/images/arrowbig.png",
+                      width: 24,
+                      height: 24,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
