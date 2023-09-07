@@ -51,7 +51,7 @@ class DeviceCard extends StatelessWidget {
             child: Image.asset(
               device.img,
               width: 40,
-              height: 37,
+              height: 40,
             ),
           ),
 
