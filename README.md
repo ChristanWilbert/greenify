@@ -1,6 +1,5 @@
 # Solar Power Plant Calculator App
 
-![App Logo](insert_logo_image_url_here)
 
 Welcome to the Solar Power Plant Calculator App! This Flutter project is designed to help people determine the solar power plant requirements for their household. Whether you're interested in reducing your carbon footprint or saving on electricity bills, this app is your one-stop solution to harness the power of solar energy.
 
@@ -26,8 +25,8 @@ Welcome to the Solar Power Plant Calculator App! This Flutter project is designe
 ## Screenshots
 
 <p align="center">
-  <img src="[insert_image_url_1_here](https://github.com/ChristanWilbert/greenify/assets/93810560/8fd9f0d1-053e-40bf-919a-93c688baf001)" width="250" alt="Image 1" >
-  <img src="https://github.com/ChristanWilbert/greenify/assets/93810560/47401f0f-1b67-48ee-a923-4e6b014ccd3b" width="250" alt="Image 2">
+  <img src="https://github.com/ChristanWilbert/greenify/assets/93810560/8fd9f0d1-053e-40bf-919a-93c688baf001" width="250" alt="Image 1" style="padding-right: 50px;">
+  <img src="https://github.com/ChristanWilbert/greenify/assets/93810560/47401f0f-1b67-48ee-a923-4e6b014ccd3b" width="250" alt="Image 2" style="padding-right: 50px;">
 </p>
 
 
