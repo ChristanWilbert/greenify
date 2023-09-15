@@ -3,22 +3,45 @@ import 'package:flutter/material.dart';
 import 'package:greenify/models/device_class.dart';
 
 final List<Device> deviceTypes = [
-  Device(name: "Air Conditioner", img: "assets/images/AC.png", watt: "2000"),
   Device.withQty(
-      name: "Bulb", img: "assets/images/BULB.png", watt: "2600", qty: 5),
-  Device(name: "Fan", img: "assets/images/FAN.png", watt: "2500"),
+      name: "AC",
+      img: "assets/images/AC.png",
+      watt: "1000",
+      types: ["Inverter", "Old", "New"],
+      qty: 1),
   Device.withQty(
-      name: "Fridge", img: "assets/images/FRIDGE.png", watt: "1000", qty: 2),
+      name: "Bulb",
+      img: "assets/images/BULB.png",
+      watt: "20",
+      qty: 5,
+      types: ["Old", "New"]),
   Device.withQty(
-      name: "Iron", img: "assets/images/IRON.png", watt: "2900", qty: 100),
+    name: "Fan",
+    img: "assets/images/FAN.png",
+    watt: "50",
+    types: ["Old", "New"],
+    qty: 5,
+  ),
+  Device.withQty(
+      name: "Fridge",
+      img: "assets/images/FRIDGE.png",
+      watt: "600",
+      qty: 1,
+      types: ["Inverter", "Old", "New"]),
+  Device.withQty(
+      name: "Iron",
+      img: "assets/images/IRON.png",
+      watt: "1000",
+      qty: 1,
+      types: ["Old", "New"]),
 ];
 
 class DeviceProvider with ChangeNotifier {
   final List<Device> _devices = deviceTypes;
   final List<Device> _selectedDevices = [
-    deviceTypes[0],
-    deviceTypes[3],
-    deviceTypes[4]
+    deviceTypes[1],
+    deviceTypes[2],
+    deviceTypes[3]
   ];
 
   List<Device> get devices => _devices;

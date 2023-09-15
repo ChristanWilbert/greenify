@@ -27,6 +27,18 @@ class SelectedDevices extends StatelessWidget {
           height: 8,
         ),
         DeviceList(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Text(
+                "Long press to remove device",
+                style: TextStyle(color: Color.fromARGB(44, 255, 255, 255)),
+              ),
+            ),
+          ],
+        ),
       ],
     );
   }
