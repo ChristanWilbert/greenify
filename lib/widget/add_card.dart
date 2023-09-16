@@ -61,7 +61,7 @@ class _AddCardState extends State<AddCard> {
         isScrollControlled: true,
         backgroundColor: Colors.transparent,
         builder: (BuildContext context) {
-          return const AddDevicePopup();
+          return AddDevicePopup();
         },
       ),
     );

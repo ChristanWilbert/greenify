@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_shakemywidget/flutter_shakemywidget.dart';
 import 'package:greenify/models/device_class.dart';
 import 'package:greenify/provider/device_provider.dart';
+import 'package:greenify/widget/addDevicePopup.dart';
 import 'package:provider/provider.dart';
 
 class DeviceCard extends StatefulWidget {
@@ -14,21 +15,31 @@ class DeviceCard extends StatefulWidget {
 
 class _DeviceCardState extends State<DeviceCard> {
   double opacityLevel = 1.0;
-  void _changeOpacity() {
-    setState(() => opacityLevel = opacityLevel == 0 ? 1.0 : 0.0);
-  }
-
   final shakeKey = GlobalKey<ShakeWidgetState>();
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+        onTap: () => showModalBottomSheet(
+              context: context,
+              isScrollControlled: true,
+              backgroundColor: Colors.transparent,
+              builder: (BuildContext context) {
+                return AddDevicePopup.edit(appliance: widget.device);
+              },
+            ),
         onLongPress: () {
           shakeKey.currentState?.shake();
-          _changeOpacity();
+          setState(() {
+            opacityLevel = 0;
+          });
+          Future.delayed(Duration(seconds: 1)).then((_) {
+            context.read<DeviceProvider>().deselectDevice(widget.device);
+            setState(() {
+              opacityLevel = 1;
+            });
+          });
         },
-        onLongPressEnd: (details) =>
-            {context.read<DeviceProvider>().deselectDevice(widget.device)},
         child: AnimatedOpacity(
           opacity: opacityLevel,
           duration: const Duration(seconds: 1),

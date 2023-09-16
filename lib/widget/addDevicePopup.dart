@@ -5,9 +5,11 @@ import 'package:greenify/widget/devicelist/optionListGenerator.dart';
 import 'package:provider/provider.dart';
 
 class AddDevicePopup extends StatefulWidget {
-  const AddDevicePopup({
-    super.key,
-  });
+  final Device? appliance;
+
+  AddDevicePopup({Key? key, this.appliance}) : super(key: key);
+
+  AddDevicePopup.edit({Key? key, required this.appliance}) : super(key: key);
 
   @override
   State<AddDevicePopup> createState() => _AddDevicePopupState();
@@ -15,7 +17,24 @@ class AddDevicePopup extends StatefulWidget {
 
 class _AddDevicePopupState extends State<AddDevicePopup> {
   String type = "New", watt = "1000", qty = "10";
-  late Device _selectedType = context.read<DeviceProvider>().devices[0];
+  late Device _selectedType;
+
+  @override
+  void initState() {
+    super.initState();
+    // Initialize _selectedType based on widget.appliance or context if needed
+
+    setState(() {
+      _selectedType =
+          widget.appliance ?? context.read<DeviceProvider>().devices[0];
+      if (widget.appliance != null) {
+        qty = widget.appliance!.qty.toString();
+        type = widget.appliance!.type;
+        watt = widget.appliance!.watt;
+      }
+    });
+  }
+
   void selectType(Device dev) {
     setState(() {
       _selectedType = dev;
@@ -34,6 +53,8 @@ class _AddDevicePopupState extends State<AddDevicePopup> {
         qty: int.parse(qty),
         types: _selectedType.types);
     temp.type = type;
+    if (widget.appliance != null)
+      context.read<DeviceProvider>().deselectDevice(widget.appliance!);
     context.read<DeviceProvider>().selectDevice(temp);
     Navigator.pop(context);
   }
