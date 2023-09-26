@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:greenify/models/device_class.dart';
 import 'package:greenify/provider/device_provider.dart';
-import 'package:greenify/widget/add_card.dart';
+import 'package:greenify/widget/adddevice/add_card.dart';
 import 'package:greenify/widget/device_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';

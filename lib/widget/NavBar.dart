@@ -18,8 +18,8 @@ class _NavBarState extends State<NavBar> {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        width: 50,
-        color: Colors.black,
+        width: 32,
+        color: Colors.transparent,
         child: Column(
           children: [
             Expanded(
@@ -29,19 +29,19 @@ class _NavBarState extends State<NavBar> {
                   onPressed: () {
                     widget.setpageIndex(0);
                   },
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                        (widget.getpageIndex() == 0)
+                            ? Colors.transparent
+                            : const Color(0xff151515)),
+                  ),
                   child: Text(
                     "HOME",
                     style: TextStyle(
                       color: (widget.getpageIndex() == 0)
                           ? Colors.white
-                          : Color.fromARGB(255, 56, 55, 55),
+                          : const Color.fromARGB(255, 56, 55, 55),
                     ),
-                  ),
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                        (widget.getpageIndex() == 0)
-                            ? Colors.black
-                            : Color(0xff151515)),
                   ),
                 ),
               ),
@@ -53,19 +53,19 @@ class _NavBarState extends State<NavBar> {
                   onPressed: () {
                     widget.setpageIndex(1);
                   },
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                        (widget.getpageIndex() == 1)
+                            ? Colors.transparent
+                            : const Color(0xff151515)),
+                  ),
                   child: Text(
                     "DEVICE",
                     style: TextStyle(
                       color: (widget.getpageIndex() == 1)
                           ? Colors.white
-                          : Color.fromARGB(255, 56, 55, 55),
+                          : const Color.fromARGB(255, 56, 55, 55),
                     ),
-                  ),
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                        (widget.getpageIndex() == 1)
-                            ? Colors.black
-                            : Color(0xff151515)),
                   ),
                 ),
               ),
@@ -77,19 +77,19 @@ class _NavBarState extends State<NavBar> {
                   onPressed: () {
                     widget.setpageIndex(2);
                   },
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                        (widget.getpageIndex() == 2)
+                            ? Colors.transparent
+                            : Color(0xff151515)),
+                  ),
                   child: Text(
                     "SUGGESTIONS",
                     style: TextStyle(
                       color: (widget.getpageIndex() == 2)
                           ? Colors.white
-                          : Color.fromARGB(255, 56, 55, 55),
+                          : const Color.fromARGB(255, 56, 55, 55),
                     ),
-                  ),
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                        (widget.getpageIndex() == 2)
-                            ? Colors.black
-                            : Color(0xff151515)),
                   ),
                 ),
               ),
@@ -101,19 +101,19 @@ class _NavBarState extends State<NavBar> {
                   onPressed: () {
                     widget.setpageIndex(3);
                   },
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                        (widget.getpageIndex() == 3)
+                            ? Colors.transparent
+                            : const Color(0xff151515)),
+                  ),
                   child: Text(
                     "STATS",
                     style: TextStyle(
                       color: (widget.getpageIndex() == 3)
                           ? Colors.white
-                          : Color.fromARGB(255, 56, 55, 55),
+                          : const Color.fromARGB(255, 56, 55, 55),
                     ),
-                  ),
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                        (widget.getpageIndex() == 3)
-                            ? Colors.black
-                            : Color(0xff151515)),
                   ),
                 ),
               ),

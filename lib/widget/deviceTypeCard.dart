@@ -27,7 +27,7 @@ class DeviceTypeCard extends StatelessWidget {
           border: Border.all(
             color: getType().id == device.id
                 ? Colors.greenAccent
-                : Color(0xff292F39),
+                : const Color(0xff292F39),
           ),
         ),
         child: Column(

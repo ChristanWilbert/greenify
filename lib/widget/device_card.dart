@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_shakemywidget/flutter_shakemywidget.dart';
 import 'package:greenify/models/device_class.dart';
 import 'package:greenify/provider/device_provider.dart';
-import 'package:greenify/widget/addDevicePopup.dart';
+import 'package:greenify/widget/adddevice/addDevicePopup.dart';
 import 'package:provider/provider.dart';
 
 class DeviceCard extends StatefulWidget {
-  DeviceCard({required this.device, super.key});
+  const DeviceCard({required this.device, super.key});
   final Device device;
 
   @override
@@ -33,7 +33,7 @@ class _DeviceCardState extends State<DeviceCard> {
           setState(() {
             opacityLevel = 0;
           });
-          Future.delayed(Duration(seconds: 1)).then((_) {
+          Future.delayed(const Duration(seconds: 1)).then((_) {
             context.read<DeviceProvider>().deselectDevice(widget.device);
             setState(() {
               opacityLevel = 1;
@@ -47,9 +47,9 @@ class _DeviceCardState extends State<DeviceCard> {
             key: shakeKey,
             shakeCount: 2,
             shakeOffset: 10,
-            shakeDuration: Duration(milliseconds: 500),
+            shakeDuration: const Duration(milliseconds: 500),
             child: Container(
-              margin: EdgeInsets.all(4),
+              margin: const EdgeInsets.all(4),
               width: 150,
               height: 200,
               decoration: BoxDecoration(
@@ -77,7 +77,7 @@ class _DeviceCardState extends State<DeviceCard> {
                       child: Align(
                         alignment: Alignment.center,
                         child: Text(
-                          widget.device.qty.toString() + "QTY",
+                          "${widget.device.qty}QTY",
                           style: const TextStyle(
                               color: Color(0xff043600),
                               fontSize: 10,
@@ -98,7 +98,7 @@ class _DeviceCardState extends State<DeviceCard> {
                   ),
 
                   Padding(
-                    padding: EdgeInsets.fromLTRB(24, 84, 41, 101),
+                    padding: const EdgeInsets.fromLTRB(24, 84, 41, 101),
                     child: Text(widget.device.name,
                         style: const TextStyle(
                           color: Color(0xffEEF1F4),
@@ -126,7 +126,7 @@ class _DeviceCardState extends State<DeviceCard> {
                           children: [
                             Text(
                               widget.device.type,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Color(0xff9BA5B7),
                                 fontSize: 10,
                                 fontWeight: FontWeight.w700,
@@ -156,8 +156,8 @@ class _DeviceCardState extends State<DeviceCard> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              widget.device.watt + " W",
-                              style: TextStyle(
+                              "${widget.device.watt} W",
+                              style: const TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w900,
                                 fontFamily: "assets/fonts/HelveticaBlk.ttf",

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:greenify/widget/NavBar.dart';
+import 'package:greenify/widget/home.dart';
 import 'package:greenify/widget/selectedDevices.dart';
 
 class App extends StatefulWidget {
@@ -11,14 +12,7 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   final List<Widget> page = [
-    Column(
-      children: const [
-        Text(
-          "Home",
-          style: TextStyle(color: Colors.white70),
-        ),
-      ],
-    ),
+    const Home(),
     const SelectedDevices(),
     Column(
       children: const [
@@ -50,22 +44,33 @@ class _AppState extends State<App> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0x000c0c0c),
-        body: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: SingleChildScrollView(
-                child: page[_pageIndex],
-              ),
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/homebg.png"),
+              fit: BoxFit.cover,
+              opacity: 0.6,
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                NavBar(
-                    setpageIndex: _setpageIndex, getpageIndex: _getpageIndex),
-              ],
-            )
-          ],
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Expanded(
+                child: SingleChildScrollView(
+                  child: page[_pageIndex],
+                ),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  NavBar(
+                      setpageIndex: _setpageIndex, getpageIndex: _getpageIndex),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

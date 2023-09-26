@@ -11,8 +11,11 @@ class SelectedDevices extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.all(20.0),
+        const SizedBox(
+          height: 20,
+        ),
+        const Padding(
+          padding: EdgeInsets.all(20.0),
           child: Text(
             "Appliances",
             style: TextStyle(
@@ -26,12 +29,12 @@ class SelectedDevices extends StatelessWidget {
         const SizedBox(
           height: 8,
         ),
-        DeviceList(),
+        const DeviceList(),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: const [
             Padding(
-              padding: const EdgeInsets.all(18.0),
+              padding: EdgeInsets.all(18.0),
               child: Text(
                 "Long press to remove device",
                 style: TextStyle(color: Color.fromARGB(44, 255, 255, 255)),

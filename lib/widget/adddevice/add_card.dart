@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:greenify/widget/addDevicePopup.dart';
+import 'package:greenify/widget/adddevice/addDevicePopup.dart';
 
 class AddCard extends StatefulWidget {
   const AddCard({Key? key}) : super(key: key);
