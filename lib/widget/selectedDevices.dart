@@ -15,7 +15,7 @@ class SelectedDevices extends StatelessWidget {
           height: 20,
         ),
         const Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: EdgeInsets.only(left: 20.0, top: 5.0, bottom: 5),
           child: Text(
             "Appliances",
             style: TextStyle(
@@ -37,7 +37,7 @@ class SelectedDevices extends StatelessWidget {
               padding: EdgeInsets.all(18.0),
               child: Text(
                 "Long press to remove device",
-                style: TextStyle(color: Color.fromARGB(44, 255, 255, 255)),
+                style: TextStyle(color: Color.fromARGB(121, 255, 255, 255)),
               ),
             ),
           ],

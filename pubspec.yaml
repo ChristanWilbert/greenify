@@ -83,8 +83,8 @@ flutter:
   fonts:
     - family: "Helvetica"
       fonts:
-        - asset: assets/fonts/HelveticaReg.ttf
-        - asset: assets/fonts/HelveticaBlk.ttf
+        - asset: assets/fonts/Helvetica.ttf
+        - asset: assets/fonts/HelveticaBd.ttf
 
   #
   # For details regarding fonts from package dependencies,

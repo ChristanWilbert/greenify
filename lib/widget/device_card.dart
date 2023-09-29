@@ -4,6 +4,7 @@ import 'package:greenify/models/device_class.dart';
 import 'package:greenify/provider/device_provider.dart';
 import 'package:greenify/widget/adddevice/addDevicePopup.dart';
 import 'package:provider/provider.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DeviceCard extends StatefulWidget {
   const DeviceCard({required this.device, super.key});
@@ -98,14 +99,12 @@ class _DeviceCardState extends State<DeviceCard> {
                   ),
 
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(24, 84, 41, 101),
+                    padding: const EdgeInsets.fromLTRB(24, 84, 41, 0),
                     child: Text(widget.device.name,
-                        style: const TextStyle(
-                          color: Color(0xffEEF1F4),
-                          fontSize: 12,
-                          fontWeight: FontWeight.normal,
-                          fontFamily: "assets/fonts/HelveticaReg.ttf",
-                        )),
+                        style: GoogleFonts.inter(
+                            fontSize: 12,
+                            color: Color(0xffEEF1F4),
+                            fontWeight: FontWeight.w300)),
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(41, 113, 39, 67),
@@ -129,8 +128,8 @@ class _DeviceCardState extends State<DeviceCard> {
                               style: const TextStyle(
                                 color: Color(0xff9BA5B7),
                                 fontSize: 10,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: "assets/fonts/HelveticaReg.ttf",
+                                fontWeight: FontWeight.bold,
+                                fontFamily: "Helvetica",
                               ),
                             ),
                           ],
@@ -160,7 +159,7 @@ class _DeviceCardState extends State<DeviceCard> {
                               style: const TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w900,
-                                fontFamily: "assets/fonts/HelveticaBlk.ttf",
+                                fontFamily: "Helvetica",
                               ),
                             ),
                           ],

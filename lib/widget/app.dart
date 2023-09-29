@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:greenify/widget/NavBar.dart';
 import 'package:greenify/widget/home.dart';
 import 'package:greenify/widget/selectedDevices.dart';
+import 'package:greenify/widget/suggestion/suggestion.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -14,16 +15,15 @@ class _AppState extends State<App> {
   final List<Widget> page = [
     const Home(),
     const SelectedDevices(),
+    const Suggestion(),
     Column(
       children: const [
-        Text("page 3"),
-      ],
-    ),
-    Column(
-      children: const [
-        Text(
-          "Comming Soon!!",
-          style: TextStyle(color: Colors.white70),
+        Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Text(
+            "Comming Soon!!",
+            style: TextStyle(color: Colors.white70),
+          ),
         ),
       ],
     ),

@@ -13,7 +13,7 @@ class _AddCardState extends State<AddCard> {
   Widget build(BuildContext context) {
     return InkWell(
       child: Container(
-        margin: EdgeInsets.all(4),
+        margin: const EdgeInsets.all(4),
         width: 150,
         height: 200,
         decoration: BoxDecoration(

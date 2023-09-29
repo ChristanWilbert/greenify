@@ -7,16 +7,17 @@ import 'package:provider/provider.dart';
 class AddDevicePopup extends StatefulWidget {
   final Device? appliance;
 
-  AddDevicePopup({Key? key, this.appliance}) : super(key: key);
+  const AddDevicePopup({Key? key, this.appliance}) : super(key: key);
 
-  AddDevicePopup.edit({Key? key, required this.appliance}) : super(key: key);
+  const AddDevicePopup.edit({Key? key, required this.appliance})
+      : super(key: key);
 
   @override
   State<AddDevicePopup> createState() => _AddDevicePopupState();
 }
 
 class _AddDevicePopupState extends State<AddDevicePopup> {
-  String type = "New", watt = "1000", qty = "10";
+  String type = "New", watt = "1000", qty = "1";
   late Device _selectedType;
 
   @override
@@ -30,7 +31,7 @@ class _AddDevicePopupState extends State<AddDevicePopup> {
       if (widget.appliance != null) {
         qty = widget.appliance!.qty.toString();
         type = widget.appliance!.type;
-        watt = widget.appliance!.watt;
+        watt = widget.appliance!.watt.toString();
       }
     });
   }
@@ -46,10 +47,11 @@ class _AddDevicePopupState extends State<AddDevicePopup> {
   }
 
   void addDevice() {
-    Device temp = Device.withQty(
+    Device temp = Device(
         name: _selectedType.name,
         img: _selectedType.img,
-        watt: watt,
+        watt: int.parse(watt),
+        avgConsumption: _selectedType.avgConsumption,
         qty: int.parse(qty),
         types: _selectedType.types);
     temp.type = type;
@@ -90,6 +92,8 @@ class _AddDevicePopupState extends State<AddDevicePopup> {
                   padding: const EdgeInsets.only(right: 16.0, top: 16),
                   child: Image.asset(
                     'assets/images/x-close.png',
+                    height: 25,
+                    width: 25,
                   ),
                 ),
               ),
