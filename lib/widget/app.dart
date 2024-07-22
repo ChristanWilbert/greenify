@@ -21,14 +21,14 @@ class _AppState extends State<App> {
         Padding(
           padding: EdgeInsets.all(8.0),
           child: Text(
-            "Comming Soon!!",
+            "Coming Soon!!",
             style: TextStyle(color: Colors.white70),
           ),
         ),
       ],
     ),
   ];
-  int _pageIndex = 0;
+  int _pageIndex = 1;
   void _setpageIndex(int val) {
     setState(() {
       _pageIndex = val;

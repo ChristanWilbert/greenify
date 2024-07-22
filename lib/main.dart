@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:greenify/provider/device_provider.dart';
-import 'package:greenify/widget/app.dart';
+import 'package:greenify/widget/home/splashscreen1.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: App(),
+      home: SplashContainer(), //App(),
       debugShowCheckedModeBanner: false,
       title: "Greenify by Wilbro Green Energy",
     );
